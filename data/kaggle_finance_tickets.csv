@@ -1,0 +1,41 @@
+text,urgency
+Payment not received for 15 days,High
+Salary not credited this month,High
+Refund still pending after 20 days,High
+Invoice overdue by 2 weeks,High
+Transaction failed but money deducted,High
+Vendor payment stuck,High
+Duplicate payment detected,Medium
+Need invoice copy,Low
+Request for account statement,Low
+Clarification on transaction charges,Low
+Payment showing pending status,Medium
+Reimbursement not processed yet,Medium
+Tax deduction mismatch,Medium
+Wrong amount debited,High
+Delay in vendor settlement,High
+Request for updated invoice,Low
+Need GST receipt,Low
+Refund initiated but not received,Medium
+Salary credited with wrong amount,High
+Payment declined issue,Medium
+Need transaction history,Low
+Clarification on payment delay,Medium
+Advance payment not adjusted,Medium
+Issue with bonus payout,High
+Account balance discrepancy,High
+Delay in reimbursement approval,Medium
+Need payment confirmation,Low
+Duplicate invoice generated,Medium
+Vendor payment status request,Low
+Transaction reversal pending,High
+Late fee wrongly applied,Medium
+Payment not reflecting in system,High
+Need refund timeline,Low
+Error in payslip amount,Medium
+Settlement amount mismatch,High
+Payment request still open,Medium
+Request for financial report copy,Low
+Vendor complaining about delay,High
+Invoice correction needed,Low
+Payment approval stuck,High
