@@ -4,10 +4,18 @@ from agents.ner_agent import extract_entities
 from fastapi import FastAPI,UploadFile, File
 from fastapi.middleware.cors import CORSMiddleware
 from services.scraping_service import check_finance_rule
+from services.email_service import fetch_latest_email
+
 from agents.response_agent import draft_reply
 from services.db_service import save_ticket
 import os
 app = FastAPI()
+from dotenv import load_dotenv
+
+load_dotenv()
+
+GROQ_API_KEY = os.getenv("GROQ_API_KEY")
+print("Loaded GROQ_API_KEY =", GROQ_API_KEY)
 
 app.add_middleware(
     CORSMiddleware,
@@ -59,6 +67,24 @@ def process_file(file: UploadFile = File(...)):
 
     return {"response": response_text}
 
+
+@app.get("/check_email")
+def check_email():
+
+    email = fetch_latest_email()
+
+    if not email:
+        return {"message": "No new emails"}
+
+    text = email["subject"] + " " + email["body"]
+
+    response = draft_reply({"text": text})
+
+    return {
+        "email_subject": email["subject"],
+        "email_body": email["body"],
+        "ai_response": response
+    }
 
 def process_ticket(input_text=None, file=None):
 
